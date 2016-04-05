@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<link href="css/style.css" rel="stylesheet">
+<body>
+	<svg id="svg">
+		<g id="chart" transform="translate(100,100)"></g>
+	</svg>
+</body>
+
+<script src="js/d3.min.js"></script>
+<script src="js/jquery-git2.min.js"></script>
+
+<script>
+
+	var rect_width = 80; // Rectangle Width
+	var rect_height = 60; // Rectangle Height
+	var margin_left = 80; // space X between rectangles
+	var margin_top = 40; // space Y between rectangles on same levels
+	var r = rect_width/20; // radius of circle
+
+	$(document).ready(function(){
+
+	// Get JSON file from API "http://private-9f3c8-angstrom.apiary-mock.com/system"
+        $.getJSON("http://private-9f3c8-angstrom.apiary-mock.com/system", function (data) {
+
+        //Draw Chart
+        	drawCharts(data);
+
+        });
+
+
+	});
+</script>
+
+<script src="js/drawCharts.js"></script>
